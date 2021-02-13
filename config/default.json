@@ -1,0 +1,3 @@
+{
+    "MONGO_URI":"mongodb+srv://pbash:pbash@cluster0.sonjo.mongodb.net/DevConnector?retryWrites=true&w=majority"
+}
