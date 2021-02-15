@@ -1,3 +1,6 @@
 {
-    "MONGO_URI":"mongodb+srv://pbash:pbash@cluster0.sonjo.mongodb.net/DevConnector?retryWrites=true&w=majority"
+  "MONGO_URI": "mongodb+srv://pbash:pbash@cluster0.sonjo.mongodb.net/DevConnector?retryWrites=true&w=majority",
+  "JWT_SECRET": "myjwtsecret",
+  "CLIENT_ID": "117b2db947defc61395d",
+  "CLIENT_SECRET": "57ab08788f51dabc77bfbcb567c654427730d6ad"
 }
