@@ -418,9 +418,9 @@ button {
 }
 
 .darkmodebutton {
-  transform: translateX(30px);
+  transform: translateX(-10px);
   transition: all 0.5s ease-in-out;
-  opacity: 0.1%;
+  opacity: 100%;
 }
 
 .navbar ul {
@@ -684,6 +684,16 @@ button {
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
+  }
+
+  .darkmodebutton {
+    position: relative;
+    transform: translateX(-10px);
+    opacity: 100%;
+  }
+  .navbar:hover .darkmodebutton {
+    transform: translateX(-10px);
+    opacity: 100%;
   }
 
   .darkmodecircle {
