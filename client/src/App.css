@@ -685,11 +685,14 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
-}
 
-@media (max-width: 600px) {
+  .navbar:hover .darkmodebutton {
+    transform: translateX(-20px);
+    opacity: 100%;
+  }
+
   .darkmodebutton {
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     transition: all 0.5s ease-in-out;
     opacity: 1;
   }
