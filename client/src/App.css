@@ -414,7 +414,7 @@ button {
 
 .navbar:hover .darkmodebutton {
   transform: translateX(-10px);
-  opacity: 100%;
+  opacity: 1;
 }
 
 .darkmodebutton {
@@ -686,12 +686,16 @@ button {
     padding: 0.3rem 0.4rem;
   }
 
+  .navbar:hover .darkmodebutton {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+
   .darkmodebutton {
     position: relative;
     transform: translateX(-10px);
     opacity: 1;
   }
-
   .darkmodecircle {
     position: absolute;
     top: 50%;
