@@ -420,7 +420,7 @@ button {
 .darkmodebutton {
   transform: translateX(30px);
   transition: all 0.5s ease-in-out;
-  opacity: 0;
+  opacity: 0.01;
 }
 
 .navbar ul {
