@@ -8,6 +8,7 @@ const connectDatabase = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
+      useFindAndModify: true,
     });
     console.log("Connected to Atlas");
   } catch (error) {

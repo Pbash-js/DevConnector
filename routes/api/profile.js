@@ -242,7 +242,7 @@ router.put(
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ errors: errors.array() });
     }
 
     const {
@@ -259,10 +259,10 @@ router.put(
       school,
       degree,
       fieldofstudy,
-      description,
       from,
       to,
       current,
+      description,
     };
 
     try {
@@ -275,7 +275,7 @@ router.put(
       return res.json(profile);
     } catch (error) {
       console.error(error.message);
-      res.status(500).json({ msg: "Server error" });
+      return res.status(500).json({ msg: "Server error" });
     }
   }
 );
@@ -300,27 +300,26 @@ router.delete("/education/:eduID", auth, async (req, res) => {
   }
 });
 
+// api/profile/github/:username
+
+// OAuth using query parameters is deprecated
 router.get("/github/:username", (req, res) => {
   try {
     const options = {
-      uri: `https://api.github.com/users/${
-        req.params.username
-      }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-        "CLIENT_ID"
-      )}&client_secret=${config.get("CLIENT_SECRET")}`,
+      uri: `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`,
       method: "GET",
       headers: { "user-agent": "node.js" },
     };
 
     request(options, (error, response, body) => {
       if (error) {
-        console.error(error.message);
+        return console.error(error.message);
       }
       if (response.statusCode != 200) {
-        res.status(404).json({ msg: "Github profile not found" });
+        return res.status(404).json({ msg: "Github profile not found" });
       }
 
-      res.json(JSON.parse(body));
+      return res.json(JSON.parse(body));
     });
   } catch (error) {
     console.error(error.message);

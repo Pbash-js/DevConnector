@@ -4,6 +4,15 @@ const connectDatabase = require("./config/databaseconnect");
 
 connectDatabase();
 
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 app.use(express.json({ extended: true }));
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/posts", require("./routes/api/posts"));
