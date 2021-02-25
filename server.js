@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
   //serve the static file
 
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.htmlh"));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
