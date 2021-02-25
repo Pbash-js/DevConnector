@@ -7,6 +7,7 @@ const Landing = ({ isAuthenticated }) => {
   const fulltitle = "DevConnector";
 
   useEffect(() => {
+    document.querySelector("body").style.overflow = "hidden";
     setTimeout(() => {
       [...fulltitle].forEach((item, index) =>
         setTimeout(() => {
@@ -15,12 +16,20 @@ const Landing = ({ isAuthenticated }) => {
         }, 100 * index)
       );
     }, 200);
+
+    return () => {
+      document.querySelector("body").style.overflow = "auto";
+    };
   }, []);
 
   return isAuthenticated ? (
     <Redirect to="/dashboard" />
   ) : (
-    <section className="landing ogcolor">
+    <section
+      className={`landing ogcolor ${
+        document.documentElement.classList.value === "invert" && "notinvert"
+      }`}
+    >
       <div className="dark-overlay">
         <div className="landing-inner">
           <h1 className="x-large">
