@@ -11,9 +11,6 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       document
         .querySelectorAll(".ogcolor")
         .forEach((el) => el.classList.toggle("notinvert"));
-      document
-        .querySelectorAll(".btn")
-        .forEach((el) => el.classList.toggle("notinvert"));
     }, 500);
     document.querySelector(".navbar").style.opacity = 1;
     if (!darkMode) {

@@ -4,7 +4,7 @@ const ProfileGithub = ({ repos }) => {
   var repoArray = [];
   if (repos) {
     repoArray = repos.map((repo) => (
-      <>
+      <div key={repo.html_url}>
         <div className="repo bg-white p-1 my-1">
           <div>
             <h4>
@@ -24,7 +24,7 @@ const ProfileGithub = ({ repos }) => {
             </ul>
           </div>
         </div>
-      </>
+      </div>
     ));
   }
   return (

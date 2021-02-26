@@ -25,6 +25,7 @@ import Profiles from "./components/Profiles/Profiles";
 import ProfileItem from "./components/Profiles/ProfileItem";
 import Posts from "./posts/Posts";
 import Post from "./posts/Post";
+import NotFound from "./components/NotFound";
 
 if (localStorage.token) {
   setAuthHeaders(localStorage.token);
@@ -74,6 +75,7 @@ const App = () => {
 
               <PrivateRoute exact path="/posts" component={Posts} />
               <PrivateRoute exact path="/post/:id" component={Post} />
+              <Route component={NotFound} />
             </Switch>
           </section>
         </Router>
